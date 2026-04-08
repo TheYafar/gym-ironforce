@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+  
+  --color-brand-yellow: #FACC15;
+  --color-brand-black: #000000;
+  --color-brand-dark: #121212;
+  --color-brand-gray: #1E1E1E;
+  --color-brand-gray-light: #2A2A2A;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+}
+
+/* ===== Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-brand-black);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Layout ===== */
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  @apply relative bg-brand-yellow text-black font-black uppercase tracking-wider px-8 py-4 
+         overflow-hidden transition-all duration-300 inline-block;
+}
+.btn-primary::after {
+  content: '';
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+.btn-primary:hover::after {
+  @apply opacity-10;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  @apply relative border-2 border-brand-yellow text-brand-yellow font-black uppercase tracking-wider 
+         px-8 py-4 overflow-hidden transition-all duration-300 inline-block;
+}
+.btn-secondary:hover {
+  @apply bg-brand-yellow text-black;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.2);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ===== Typography ===== */
+.heading-colossal {
+  @apply text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-none;
+}
+
+.heading-section {
+  @apply text-3xl md:text-5xl font-black uppercase tracking-tight mb-12;
+}
+
+/* ===== Underline Accent ===== */
+.section-accent {
+  @apply w-24 h-2 bg-brand-yellow mx-auto;
+}
+
+/* ===== Glow Card Effect ===== */
+.card-glow {
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 40px rgba(250, 204, 21, 0.15), 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px);
+}
+
+/* ===== Horizontal ticker animation ===== */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 28s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* ===== Separator lines ===== */
+.divider-yellow {
+  @apply w-full h-px bg-brand-yellow/30;
+}
+
+/* ===== Image reveal on hover ===== */
+.img-reveal {
+  filter: grayscale(1) brightness(0.5);
+  transition: filter 0.6s ease;
+}
+.img-reveal:hover {
+  filter: grayscale(0) brightness(1);
+}
+
+/* ===== Counter number flash ===== */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.count-up {
+  animation: countUp 0.6s ease forwards;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-yellow);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EAB308;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--color-brand-yellow);
+  color: black;
+}
