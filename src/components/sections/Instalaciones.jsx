@@ -2,11 +2,10 @@ import { motion } from 'framer-motion'
 import { FaDumbbell, FaCamera } from 'react-icons/fa'
 
 const Instalaciones = () => {
-  // Imágenes realistas (Blanco y Negro dramático)
   const images = [
-    { title: 'ZONA DE MÁQUINAS', src: '/images/zona-maquinas.png', featured: false },
-    { title: 'ZONA DE PESO LIBRE', src: '/images/peso-libre.png', featured: true },
-    { title: 'SALÓN DE CLASES', src: '/images/salon-clases.png', featured: false },
+    { title: 'ZONA DE MÁQUINAS', src: './images/zona-maquinas.png', featured: false },
+    { title: 'ZONA DE PESO LIBRE', src: './images/peso-libre.png', featured: true },
+    { title: 'SALÓN DE CLASES', src: './images/salon-clases.png', featured: false },
   ]
 
   return (

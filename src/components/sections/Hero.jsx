@@ -18,7 +18,7 @@ const Hero = () => {
       <motion.div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/hero-bg-real.png')",
+          backgroundImage: "url('./images/hero-bg-real.png')",
           y,
           filter: 'grayscale(1) brightness(0.35) contrast(1.3)',
         }}

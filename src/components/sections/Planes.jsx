@@ -55,7 +55,7 @@ const Planes = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/planes-img.png')",
+          backgroundImage: "url('./images/planes-img.png')",
           filter: 'grayscale(1) brightness(0.08)',
         }}
       />
@@ -96,7 +96,7 @@ const Planes = () => {
             transition={{ duration: 0.7 }}
           >
             <img
-              src="/images/planes-img.png"
+              src="./images/planes-img.png"
               alt="Entrenamiento Iron Force"
               className="w-full h-full object-cover img-reveal"
             />
